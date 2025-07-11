@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Todo List </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand font-bold" href="/"> My Todo List </a>
+    </nav>
+
+    <main class="p-4">
+        <a href="/add" type="button" class="btn btn-primary"> Add a New Task </a>
+        <div class="pt-2">
+            All Tasks
+        </div>
+        <hr>
+        <div class="row gap-2">
+            {% for task in all_tasks %}
+                <div class="col-sm-12 col-md-6 col-lg-3 card">
+                    <p> ID: {{ task.id }} </p>
+                    <div class="card-body">
+                        <h4 class="card-title"> {{ task.title }} </h4>
+                        <p class="card-text"> {{ task.description }} </p>
+                        <p class="text-muted"> {{ task.duedate }} </p>
+                        <div class="">
+                            <span class="badge badge-pill badge-primary"> {{ task.priority }} </span>
+                            <span class="badge badge-pill badge-success"> {{ task.status }} </span>
+                        </div>
+                        <div class="py-2">
+                            <a href="/view" class="btn btn-primary btn-sm"> View </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
