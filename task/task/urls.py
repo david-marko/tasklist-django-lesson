@@ -17,10 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import addPage
-from home.views import homePage
+from home.views import homePage, viewPage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", homePage),
-    path("add/", addPage)
+    path("add/", addPage),
+    path("view/<str:task_id>/", viewPage)
 ]

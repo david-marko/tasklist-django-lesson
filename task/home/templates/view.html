@@ -15,15 +15,20 @@
     </nav>
 
     <main class="p-4">
-        <a href="/add" type="button" class="btn btn-primary"> Add a New Task </a>
-        <div class="pt-2">
-            All Tasks
-        </div>
-        <hr>
-        <div class="row gap-2">
-            {% for task in all_tasks %}
+        <a href="/" type="button" class="">
+            < Back to Tasks </a>
+                <div class="pt-2">
+                    Task Details (ID: {{ task.id }})
+                </div>
+                <hr>
+
+                <div>
+                    <button class="btn btn-primary btn-sm"> Edit </button>
+                    <button class="btn btn-success btn-sm"> Mark as Done </button>
+                    <button class="btn btn-danger btn-sm"> Delete </button>
+                </div>
+                <hr>
                 <div class="col-sm-12 col-md-6 col-lg-3 card">
-                    <p> ID: {{ task.id }} </p>
                     <div class="card-body">
                         <h4 class="card-title"> {{ task.title }} </h4>
                         <p class="card-text"> {{ task.description }} </p>
@@ -32,13 +37,9 @@
                             <span class="badge badge-pill badge-primary"> {{ task.priority }} </span>
                             <span class="badge badge-pill badge-success"> {{ task.status }} </span>
                         </div>
-                        <div class="py-2">
-                            <a href="/view/{{ task.id }}" class="btn btn-primary btn-sm"> View </a>
-                        </div>
                     </div>
                 </div>
-            {% endfor %}
-        </div>
+
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>

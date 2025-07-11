@@ -37,3 +37,11 @@ def addPage(request):
         return redirect('/')
     
     return render(request, "add.html")
+
+
+def viewPage(request, task_id):
+    demo_task = {}
+    context = {
+        "task": demo_task
+    }
+    return render(request, "view.html", context)
