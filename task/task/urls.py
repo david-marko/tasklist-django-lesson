@@ -19,9 +19,18 @@ from django.urls import path
 from home.views import addPage
 from home.views import homePage, viewPage
 
+from blog.views import blogHome, addBlog, viewBlog
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", homePage),
     path("add/", addPage),
-    path("view/<str:task_id>/", viewPage)
+
+
+    # Blogs Routes
+    path("blog/", blogHome),
+    path("blog/add/", addBlog),
+    # Dynamic URL
+    path("blog/view/<str:link>", viewBlog),
+
 ]

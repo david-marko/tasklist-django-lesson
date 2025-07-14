@@ -13,6 +13,7 @@ def homePage(request):
 
 
 def addPage(request):
+    error_message = None
     if request.method == 'POST':
         form_data = request.POST
         title = form_data['title']
@@ -33,10 +34,20 @@ def addPage(request):
             "priority": priority,
             "status" : status
         }
-        all_tasks.append(task)
-        return redirect('/')
-    
-    return render(request, "add.html")
+
+        # Check to see that the task does not exist
+        isAlreadyCreated = title in [each['title'] for each in all_tasks]
+
+        if isAlreadyCreated == False:
+            all_tasks.append(task)
+            return redirect('/')
+        else:
+            error_message = "The task '"+title+"' is already created."
+            
+    context = {
+        "error": error_message
+    }
+    return render(request, "add.html", context)
 
 
 def viewPage(request, task_id):

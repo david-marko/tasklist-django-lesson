@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title> {{ article.title }} </title>
+</head>
+
+<body style="background-color: #f5f5f5;">
+    <nav class="navbar navbar-dark bg-success">
+        <a class="navbar-brand" href="/blog"> Refactory Blog </a>
+        <a href="/blog/add" class="text-dark"> Add Article </a>
+    </nav>
+
+    <div class="p-4">
+        <a href="/blog">
+            < Back to Blogs </a>
+
+    <div class="p-4">
+        <div style="height: 400px;width: 100%; background-repeat: no-repeat;">
+            <img class="h-100 bg-cover w-100" src="{{ article.image }}" alt="Card image cap">
+        </div>
+        <hr>
+        <h4 class="card-title"> {{ article.title }}</h4>
+        <p class="text-muted"> {{ article.date }} </p>
+        <span class="badge badge-secondary"> {{ article.author }} </span>
+        <br>
+        <div class="row">
+            <div class="p-2">
+                <p class="card-text text-muted fs-1">
+                    {{ article.body }}
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

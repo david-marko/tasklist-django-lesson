@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title> Add blog page </title>
+</head>
+
+<body style="background-color: #f5f5f5;">
+    <nav class="navbar navbar-dark bg-success">
+        <a class="navbar-brand" href="/blog"> Refactory Blog </a>
+        <a href="/blog/add" class="text-dark"> Add Article </a>
+    </nav>
+
+    <div class="p-4">
+        <a href="/blog">
+            < Back to Blogs </a>
+            <hr>
+            <form action="/blog/add/" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for=""> Title </label>
+                    <input name="title" type="text" class="form-control" placeholder="Title" >
+                </div>
+                <div class="form-group">
+                    <label for=""> Author </label>
+                    <input name="author" type="text" class="form-control" placeholder="Author">
+                </div>
+                <div class="form-group">
+                    <label for=""> Date Published </label>
+                    <input name="date" type="datetime-local" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for=""> Body </label>
+                    <textarea name="body" type="text" class="form-control" placeholder="Body of the article"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for=""> Image </label>
+                    <input name="image" type="text" class="form-control" placeholder="Image Link">
+                </div>
+                <div class="form-group">
+                    <label for=""> Status </label>
+                    <select name="status" id="" class="form-control">
+                        <option value="draft"> Draft </option>
+                        <option value="published"> Published </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for=""> Link </label>
+                    <input name="link" type="text" class="form-control" placeholder="Slug or unique link">
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm"> Add Blog Post </button>
+            </form>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
