@@ -108,7 +108,7 @@ redirect back to the blog page
 - SmallIntegerField, BigIntegerField, PositiveIntegerField - Integers but of various sizes
 - FloatField and DecimalField 0.23, 32.12
 
-## Date Fields
+## Date and Time Fields
 - DateField 15/07/2025
 - DatetimeField 15/07/2025 10:05:43
 - TimeField 10:05:43
